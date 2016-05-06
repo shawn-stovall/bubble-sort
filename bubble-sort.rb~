@@ -1,0 +1,25 @@
+# Basic Bubble Sort
+def bubble-sort(list)
+  last_sorted = list.length - 1
+  sorted = list
+
+  until n == 0
+    sorted, last_sorted = bubble(sorted, last_sorted)
+  end
+
+  return sorted
+end
+
+def bubble(list, last_sorted)
+  result = list
+  recent_sort = 0
+  
+  for i in 0...last_sorted
+    if result[i] > result[i + 1]
+      swap(result[i], result[i + 1])
+      recent_sort = i
+    end
+  end
+
+  return [result, recent_sort]
+end
